@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cmmk31d282i46"]
+
+[ext_resource type="Script" uid="uid://d2nsph3v6cu28" path="res://CREDITS/GodotCredits.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dvihnttccnhro" path="res://assets/sfx/WhackABlahaj.wav" id="2_pn7ly"]
+
+[sub_resource type="Resource" id="Resource_6ql1e"]
+metadata/__load_path__ = "res://main.tscn"
+
+[node name="Credits" type="Control" unique_id=270421627]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+to_scene = SubResource("Resource_6ql1e")
+Music = ExtResource("2_pn7ly")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2001902516]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=1132429245]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+
+[node name="CreditsContainer" type="Control" parent="." unique_id=2120176700]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Line" type="Label" parent="CreditsContainer" unique_id=791018951]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 624.0
+offset_bottom = 652.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
