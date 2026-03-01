@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cuo4rghonal38"]
+
+[ext_resource type="Texture2D" uid="uid://bhn3b0mmj0hkg" path="res://assets/bg.png" id="1_4m02p"]
+[ext_resource type="Script" uid="uid://wlefmae7lc5a" path="res://scenes/gamescreen.gd" id="1_82mmq"]
+[ext_resource type="PackedScene" uid="uid://7vdkisk586o1" path="res://scenes/male.tscn" id="2_4m02p"]
+[ext_resource type="Texture2D" uid="uid://cmnr8nayhtjko" path="res://assets/newbgunderground.png" id="3_bp0ix"]
+[ext_resource type="AudioStream" uid="uid://b4k2m5ty2bv4g" path="res://assets/sfx/Floor 999.wav" id="3_euawm"]
+[ext_resource type="FontFile" uid="uid://bgq8r8y81fpng" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_7w0yv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_euawm"]
+texture = ExtResource("1_4m02p")
+0:0/size_in_atlas = Vector2i(128, 73)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1024.7006, -593.06775, -966.0681, -590.62476, -961.1821, 411.0138, 971.2473, 423.22888, 968.83154, -585.948, 1027.4368, -585.7387, 1044.5381, 586.91125, -1029.5867, 589.3544)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82mmq"]
+texture = ExtResource("3_bp0ix")
+0:0/size_in_atlas = Vector2i(128, 73)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1022.7803, -593.496, -787.62573, -593.496, -781.9595, 364.12122, 954.7842, 355.62158, 951.9155, -579.8586, 1028.4468, -579.3301, 1025.6138, 585.10974, -1025.6135, 582.2766)
+
+[sub_resource type="TileSet" id="TileSet_7w0yv"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_euawm")
+sources/1 = SubResource("TileSetAtlasSource_82mmq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w0yv"]
+size = Vector2(296, 565.5)
+
+[node name="Node2D" type="Node2D" unique_id=29756449]
+script = ExtResource("1_82mmq")
+
+[node name="Player" parent="." unique_id=152928849 instance=ExtResource("2_4m02p")]
+position = Vector2(692, 664)
+collision_layer = 1
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1420099702]
+tile_set = SubResource("TileSet_7w0yv")
+format = 2
+layer_0/tile_data = PackedInt32Array(1310755, 1, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1810544226]
+position = Vector2(577, 326)
+zoom = Vector2(0.57, 0.57)
+
+[node name="Floor999" type="AudioStreamPlayer" parent="." unique_id=567738554]
+stream = ExtResource("3_euawm")
+autoplay = true
+
+[node name="FloorLabel" type="Label" parent="." unique_id=1040779340]
+offset_left = -395.0
+offset_top = -206.0
+offset_right = -194.0
+offset_bottom = -145.0
+theme_override_fonts/font = ExtResource("4_7w0yv")
+theme_override_font_sizes/font_size = 60
+text = "Floor: -999"
+
+[node name="MessageLabel" type="Label" parent="." unique_id=2057200934]
+offset_left = -395.0
+offset_top = -91.0
+offset_right = 190.0
+offset_bottom = -30.0
+theme_override_fonts/font = ExtResource("4_7w0yv")
+theme_override_font_sizes/font_size = 60
+text = "SAMPLE"
+
+[node name="TriggerZone" type="Area2D" parent="." unique_id=30658146]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerZone" unique_id=849567547]
+position = Vector2(1112, 390.75)
+shape = SubResource("RectangleShape2D_7w0yv")
+
+[node name="Inst" type="Label" parent="." unique_id=885598011]
+offset_left = 865.0
+offset_top = 713.0
+offset_right = 1360.0
+offset_bottom = 838.0
+theme_override_fonts/font = ExtResource("4_7w0yv")
+theme_override_font_sizes/font_size = 36
+text = "Press \"E\"
+to interact."
+horizontal_alignment = 1

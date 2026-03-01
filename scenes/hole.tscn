@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8qpl44af8fhg"]
+
+[ext_resource type="Script" uid="uid://bku6kistl3xap" path="res://scenes/hole.gd" id="1_lerre"]
+[ext_resource type="Texture2D" uid="uid://b5y1nfrjslnos" path="res://assets/parin.jpg" id="2_iyxdx"]
+
+[node name="Hole" type="Button" unique_id=656981742]
+offset_right = 58.0
+offset_bottom = 58.0
+script = ExtResource("1_lerre")
+
+[node name="MoleLabel" type="Label" parent="." unique_id=950582281]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="Blahaj50" type="Sprite2D" parent="." unique_id=1112245651]
+position = Vector2(49, 39)
+scale = Vector2(0.026084492, 0.011500001)
+texture = ExtResource("2_iyxdx")
